@@ -14,7 +14,7 @@ public class ExampleTest {
         User user = new User("Bla Blabla", "+79631074312", "m123467890");
         open("https://ok.ru");
         LoginPageInterface lp = LoginFactory.getPage();
-        MainPage mp = lp.login(user);
+        MainPageInterface mp = lp.login(user);
         assertEquals(mp.getName(), user.getName());
         closeWebDriver();
     }
@@ -24,7 +24,7 @@ public class ExampleTest {
         User user = new User("Alan Rick", "bla1996@gmail.ru", "bla_password1234");
         open("https://ok.ru");
         LoginPage lp = new LoginPage();
-        MainPage mp = lp.login(user);
+        MainPageInterface mp = lp.login(user);
         assertNotEquals(mp.getName(), user.getName());
         closeWebDriver();
     }

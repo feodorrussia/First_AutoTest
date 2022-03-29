@@ -1,5 +1,5 @@
 package org.test;
 
 public interface LoginPageInterface {
-    public MainPage login(User user);
+    public MainPageInterface login(User user);
 }

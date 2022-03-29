@@ -11,10 +11,10 @@ public class LoginPage implements LoginPageInterface{
     String xPathButton = "//*[contains(@class,\"button-pro __wide\")]";
 
     @Override
-    public MainPage login(User user){
+    public MainPageInterface login(User user){
         $(By.name(xPathNameEmail)).shouldBe(visible).setValue(user.getLogin());
         $(By.name(xPathNamePassword)).shouldBe(visible).setValue(user.getPassword());
         $(By.xpath(xPathButton)).shouldBe(visible).click();
-        return new MainPage();
+        return MainFactory.getPage();
     }
 }
