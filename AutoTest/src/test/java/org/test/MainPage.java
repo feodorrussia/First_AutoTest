@@ -17,7 +17,7 @@ public class MainPage {
             return uName.shouldBe(visible).getText();
         }
         else {
-            System.out.println("Не отображается имя пользователя!");;
+            System.out.println("log1: Не отображается имя пользователя!");;
             return "";
         }
     }
