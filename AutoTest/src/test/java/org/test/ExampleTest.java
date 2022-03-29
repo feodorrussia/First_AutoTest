@@ -13,7 +13,7 @@ public class ExampleTest {
         User user1 = new User("Alan Rick", "bla1996@gmail.ru", "bla_password1234");
         User user = new User("Bla Blabla", "+79631074312", "m123467890");
         open("https://ok.ru");
-        LoginPage lp = new LoginPage();
+        LoginPageInterface lp = LoginFactory.getPage();
         MainPage mp = lp.login(user);
         assertEquals(mp.getName(), user.getName());
         closeWebDriver();
