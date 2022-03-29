@@ -28,4 +28,8 @@ public class ExampleTest {
         assertNotEquals(mp.getName(), user.getName());
         closeWebDriver();
     }
+    @Test
+    public void SendingMessage(){
+        //до 05.04
+    }
 }
