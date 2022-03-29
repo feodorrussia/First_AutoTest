@@ -11,9 +11,9 @@ public class LoginPage {
     String xPathButton = "//*[contains(@class,\"button-pro __wide\")]";
 
     public MainPage login(User user){
-        $(By.name(xPathNameEmail)).shouldBe(visible.because("Не отображается поле для вводя логина!")).setValue(user.getLogin());
-        $(By.name(xPathNamePassword)).shouldBe(visible.because("Не отображается поле для вводя пароля!")).setValue(user.getPassword());
-        $(By.xpath(xPathButton)).shouldBe(visible.because("Не отображается кнопка \"Войти в Одноклассники\"!")).click();
+        $(By.name(xPathNameEmail)).shouldBe(visible).setValue(user.getLogin());
+        $(By.name(xPathNamePassword)).shouldBe(visible).setValue(user.getPassword());
+        $(By.xpath(xPathButton)).shouldBe(visible).click();
         return new MainPage();
     }
 }

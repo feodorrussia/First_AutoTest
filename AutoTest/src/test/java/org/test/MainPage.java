@@ -1,5 +1,6 @@
 package org.test;
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import java.util.NoSuchElementException;
@@ -11,9 +12,11 @@ public class MainPage {
     String xPathName = "//*[contains(@class,\"tico ellip\")]";
 
     public String getName(){
-        try {
-            return $(By.xpath(xPathName)).shouldBe(visible).getText();
-        } catch (NoSuchElementException e) {
+        SelenideElement uName = $(By.xpath(xPathName));
+        if (uName.isDisplayed()){
+            return uName.shouldBe(visible).getText();
+        }
+        else {
             System.out.println("Не отображается имя пользователя!");;
             return "";
         }

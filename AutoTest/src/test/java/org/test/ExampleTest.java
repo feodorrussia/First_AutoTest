@@ -9,7 +9,7 @@ public class ExampleTest {
     @Test
     public void LoginTest() {
         User user = new User("Bla Blabla", "bla1996", "bla_password");
-        User user2 = new User("Blabla Bla", "blabla2014", "blabla_password");
+        User user2 = new User("Фёдор Белоус", "blabla2014", "blabla_password");
         open("https://ok.ru");
         LoginPage lp = new LoginPage();
         MainPage mp = lp.login(user);
