@@ -2,13 +2,20 @@ package org.test;
 
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.visible;
+import java.util.NoSuchElementException;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
-    String xPathFullName = "//*[contains(@class,\"tico ellip\")]";
+    String xPathName = "//*[contains(@class,\"tico ellip\")]";
 
     public String getName(){
-        return $(By.xpath(xPathFullName)).shouldBe(visible.because("Имя пользователя не отображается!")).getText();
+        try {
+            return $(By.xpath(xPathName)).shouldBe(visible).getText();
+        } catch (NoSuchElementException e) {
+            System.out.println("Не отображается имя пользователя!");;
+            return "";
+        }
     }
 }

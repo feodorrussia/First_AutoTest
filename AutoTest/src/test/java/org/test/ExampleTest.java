@@ -1,6 +1,5 @@
 package org.test;
 
-import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +13,6 @@ public class ExampleTest {
         open("https://ok.ru");
         LoginPage lp = new LoginPage();
         MainPage mp = lp.login(user);
-        assertNotEquals(mp.getName(), user.getFullName());
+        assertNotEquals(mp.getName(), user.getName());
     }
 }
